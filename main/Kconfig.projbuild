@@ -1,0 +1,74 @@
+menu "LilyGo Display Product Configuration"
+    choice LILYGO_DISPLAY_BOARD
+        prompt "LilyGo Display Board"
+        default LILYGO_T_DISPLAY_S3_AMOLED
+
+        help
+            Select LilyGo Display Product
+
+        config LILYGO_T_AMOLED_LITE_147
+            bool "T-Display AMOLED Lite 1.47 Inch"
+            
+        config LILYGO_T_DISPLAY_S3_AMOLED
+            bool "T-Display S3 AMOLED 1.91"
+
+        config LILYGO_T_DISPLAY_S3_AMOLED_TOUCH
+            bool "T-Display S3 AMOLED 1.91 Inch with Touch"
+
+        config LILYGO_T4_S3_241
+            bool "T4 S3 AMOLED 2.41 Inch with Touch"
+
+        config LILYGO_T_TRACK_102
+            bool "T-Track 1.02 Inch"
+
+        config LILYGO_T_QT_S3
+            bool "T-QT S3 0.9"
+
+        config LILYGO_T_DISPLAY
+            bool "T-Display 1.4 Inch"
+
+        config LILYGO_T_DISPLAY_S3
+            bool "T-Display S3 1.9 Inch"
+
+        config LILYGO_T_DISPLAY_S3_PRO
+            bool "T-Display S3 Pro 2.33 Inch"
+
+        config LILYGO_T_DONGLE_S2
+            bool "T-Dongle S2 1.14 Inch"
+
+        config LILYGO_T_DONGLE_S3
+            bool "T-Dongle S3 0.96 Inch"
+
+        config LILYGO_T_DISPLAY_LONG
+            bool "T-Display Long 3.4 Inch"
+    
+        config LILYGO_T_HMI
+            bool "T-HMI 2.8 Inch"
+
+        config LILYGO_T_QT_C6
+            bool "T-QT C6 0.85 Inch"
+
+        config LILYGO_T_RGB
+            bool "T-RGB 2.1 or 2.8 Inch"
+                        
+    
+    endchoice
+
+    choice LVGL_DEMO
+        prompt "GUI Demo"
+        default USE_DEMO_WIDGETS
+
+        help
+            Select LilyGo Display Product
+
+        config USE_DEMO_WIDGETS
+            bool "lvgl Show some widget demo"
+        config USE_DEMO_BENCHMARK
+            bool "lvgl Benchmark your system demo"
+        config USE_DEMO_STRESS
+            bool "lvgl Stress test demo"
+        config USE_DEMO_MUSIC
+            bool "lvgl Music player demo"
+    endchoice
+
+endmenu

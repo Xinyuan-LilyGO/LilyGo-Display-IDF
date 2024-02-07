@@ -16,6 +16,7 @@
 #include <string.h>
 
 #if defined(CONFIG_LILYGO_T_AMOLED_LITE_147) || \
+    defined(CONFIG_LILYGO_T_DISPLAY_S3_AMOLED) || \
     defined(CONFIG_LILYGO_T_DISPLAY_S3_AMOLED_TOUCH) || \
     defined(CONFIG_LILYGO_T4_S3_241)
 

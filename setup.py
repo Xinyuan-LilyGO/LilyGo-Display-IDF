@@ -19,7 +19,7 @@ if os.path.exists(output_path):
     print("Delete temporary files")
     shutil.rmtree(output_path)
 
-r = os.system("idf.py > /dev/null")
+r = os.system("idf.py > " + os.devnull)
 if r != 0:
     print(
         "Unable to execute idf.py, please see here to learn how to use and install https://github.com/espressif/esp-idf"

@@ -243,6 +243,8 @@ extern "C"  bool board_rgb_touch_init()
     if (result) {
         init_cmd = st7701_2_1_inches;
         const char *model = touchDrv->getModelName();
+        TouchDrvCSTXXX *drv = static_cast<TouchDrvCSTXXX *>(touchDrv);
+        drv->disableAutoSleep();
         ESP_LOGI(TAG, "Successfully initialized %s, using %s Driver!", model, model);
         return true;
     }

@@ -50,6 +50,9 @@ menu "LilyGo Display Product Configuration"
 
         config LILYGO_T_RGB
             bool "T-RGB 2.1 or 2.8 Inch"
+
+        config LILYGO_T_WATCH_S3
+            bool "T-Watch S3"
                         
     
     endchoice

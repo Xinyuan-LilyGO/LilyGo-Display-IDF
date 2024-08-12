@@ -12,4 +12,5 @@ idf_component_register(SRCS
     "display_long.c"
     "display_hmi.c"
     "display_rgb.cpp"
+    "display_watch_s3.c"
     INCLUDE_DIRS ".")

@@ -36,6 +36,49 @@ bool power_driver_init()
 
     PMU.clearIrqStatus();
 
+
+#if defined(CONFIG_LILYGO_T_WATCH_S3)
+    // ! ESP32S3 VDD, Don't change
+    // setDC1Voltage(3300);
+
+    //! RTC VBAT , Don't change
+    PMU.setALDO1Voltage(3300);
+
+    //! TFT BACKLIGHT VDD , Don't change
+    PMU.setALDO2Voltage(3300);
+
+    //!Screen touch VDD , Don't change
+    PMU.setALDO3Voltage(3300);
+
+    //! Radio VDD , Don't change
+    PMU.setALDO4Voltage(3300);
+
+    //!DRV2605 enable
+    PMU.setBLDO2Voltage(3300);
+
+    //! GPS Power
+    PMU.setDC3Voltage(3300);
+    PMU.enableDC3();
+
+    //! No use
+    PMU.disableDC2();
+    // PMU.disableDC3();
+    PMU.disableDC4();
+    PMU.disableDC5();
+    PMU.disableBLDO1();
+    PMU.disableCPUSLDO();
+    PMU.disableDLDO1();
+    PMU.disableDLDO2();
+
+
+    PMU.enableALDO1();  //! RTC VBAT
+    PMU.enableALDO2();  //! TFT BACKLIGHT   VDD
+    PMU.enableALDO3();  //! Screen touch VDD
+    PMU.enableALDO4();  //! Radio VDD
+    PMU.enableBLDO2();  //! drv2605 enable
+
+#else
+
     PMU.setChargingLedMode(XPOWERS_CHG_LED_BLINK_4HZ);
 
     // ALDO1 = AMOLED logic power & Sensor Power voltage
@@ -61,6 +104,7 @@ bool power_driver_init()
     PMU.enableBattDetection();
     PMU.enableVbusVoltageMeasure();
     PMU.enableBattVoltageMeasure();
+#endif
 
     ESP_LOGI(TAG, "DCDC========================");
     ESP_LOGI(TAG, "DC1  : %s   Voltage:%u mV ",  PMU.isEnableDC1()  ? "+" : "-", PMU.getDC1Voltage());

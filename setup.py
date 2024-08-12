@@ -54,6 +54,7 @@ def show_menu():
     print("12. T-Display-Long")
     print("13. T-QT-C6")
     print("14. T-RGB (2.1 or 2.8 Inches)(Support FT5236,CST820,GT911)")
+    print("15. T-Watch S3")
 
 
 def get_user_choice():
@@ -61,13 +62,13 @@ def get_user_choice():
         try:
             choice = int(
                 input(
-                    "Please enter the board number that needs to be compiled (1-14): "
+                    "Please enter the board number that needs to be compiled (1-15): "
                 )
             )
-            if 1 <= choice <= 14:
+            if 1 <= choice <= 15:
                 return choice
             else:
-                print("Invalid input, please enter a number between 1 and 14.")
+                print("Invalid input, please enter a number between 1 and 15.")
         except ValueError:
             print("Invalid input, please enter a valid number.")
 
@@ -160,6 +161,13 @@ def perform_action(choice):
         os.system("idf.py set-target esp32s3")
         copy_file(
             os.path.join(current_directory, "sdkconfig.defaults.t-rgb"),
+            "sdkconfig.defaults",
+        )
+
+    elif choice == 15:
+        os.system("idf.py set-target esp32s3")
+        copy_file(
+            os.path.join(current_directory, "sdkconfig.defaults.t-watch-s3"),
             "sdkconfig.defaults",
         )
 

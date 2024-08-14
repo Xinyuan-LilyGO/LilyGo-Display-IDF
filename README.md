@@ -1,7 +1,7 @@
 
 
 # 
-<h1 align = "center">🌟LilyGo Display Serial🌟</h1> 
+<h1 align = "center">🌟LilyGo Display Series🌟</h1> 
 
 ## 🌟New
 

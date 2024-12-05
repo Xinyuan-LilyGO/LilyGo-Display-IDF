@@ -87,7 +87,16 @@ static bool __init_qspi_bus()
         ESP_LOGE(TAG, "ERROR:No memory use .."); return false;
     }
 #endif
-    ESP_LOGI(TAG, "============T-Display-AMOLED============");
+
+#if defined(CONFIG_LILYGO_T_AMOLED_LITE_147)
+    ESP_LOGI(TAG, "============LILYGO_T_AMOLED_LITE_147============");
+#elif defined(CONFIG_LILYGO_T_DISPLAY_S3_AMOLED)
+    ESP_LOGI(TAG, "============LILYGO_T_DISPLAY_S3_AMOLED============");
+#elif defined(CONFIG_LILYGO_T_DISPLAY_S3_AMOLED_TOUCH)
+    ESP_LOGI(TAG, "============T_DISPLAY_S3_AMOLED_TOUCH============");
+#elif defined(CONFIG_LILYGO_T4_S3_241)
+    ESP_LOGI(TAG, "============LILYGO_T4_S3_241============");
+#endif
 
     ESP_LOGI(TAG, "=====CONFIGURE======");
     ESP_LOGI(TAG, "RST    > %d", BOARD_DISP_RESET);
@@ -215,6 +224,12 @@ uint8_t amoled_get_brightness()
 
 void amoled_set_window(uint16_t xs, uint16_t ys, uint16_t xe, uint16_t ye)
 {
+
+#if CONFIG_LILYGO_T4_S3_241
+    xs += 16;
+    xe += 16;
+#endif
+
     lcd_cmd_t t[3] = {
         {
             0x2A00, {

@@ -16,7 +16,7 @@
 #include "esp_idf_version.h"
 #include "driver/spi_master.h"
 
-#if CONFIG_LILYGO_T_WATCH_S3
+#if CONFIG_LILYGO_T_WATCH_S3 || CONFIG_LILYGO_T_WATCH_2019
 
 #include "lvgl.h"
 #define EXAMPLE_LCD_PIXEL_CLOCK_HZ     (27 * 1000 * 1000)

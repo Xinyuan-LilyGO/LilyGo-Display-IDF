@@ -17,8 +17,27 @@
 
 static const char *TAG = "POWER";
 
+#if CONFIG_PMU_AXP202
 
-#if CONFIG_PMU_AXP2101
+#include "XPowersAXP202.tpp"
+
+XPowersAXP202 PMU;
+
+bool power_driver_init()
+{
+    if (PMU.begin(bus_handle, AXP202_SLAVE_ADDRESS)) {
+        ESP_LOGI(TAG, "Init PMU SUCCESS!");
+    } else {
+        ESP_LOGE(TAG, "Init PMU FAILED!");
+        return false;
+    }
+    PMU.clearIrqStatus();
+    PMU.setLDO2Voltage(3300); // LCD BL
+    PMU.enableLDO2();
+    return true;
+}
+
+#elif CONFIG_PMU_AXP2101
 
 #include "XPowersAXP2101.tpp"
 

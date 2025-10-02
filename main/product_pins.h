@@ -478,6 +478,34 @@
 #define DISPLAY_BUFFER_SIZE   (AMOLED_WIDTH * AMOLED_HEIGHT)
 #define CONFIG_PMU_AXP2101  (1)
 
+#elif CONFIG_LILYGO_T_WATCH_2019
+
+
+#define BOARD_SPI_MISO       (-1)
+#define BOARD_SPI_MOSI       (19)
+#define BOARD_SPI_SCK        (18)
+#define BOARD_TFT_CS         (5)
+#define BOARD_TFT_RST        (-1)
+#define BOARD_TFT_DC         (27)
+#define BOARD_TFT_BL         (12)
+
+#define BOARD_I2C_SDA        (21)
+#define BOARD_I2C_SCL        (22)
+
+#define BOARD_TOUCH_IRQ      (38)
+#define BOARD_TOUCH_RST      (-1)
+
+#define AMOLED_HEIGHT        (240)
+#define AMOLED_WIDTH         (240)
+
+#define BOARD_HAS_TOUCH       0         //NOT YET
+#define DISPLAY_FULLRESH      false
+#define DISPLAY_BUFFER_SIZE   (AMOLED_WIDTH * AMOLED_HEIGHT)
+#define CONFIG_PMU_AXP202     (1)
+
+
+
+
 #else
 #error "No select product"
 #endif

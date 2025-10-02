@@ -53,8 +53,10 @@ menu "LilyGo Display Product Configuration"
 
         config LILYGO_T_WATCH_S3
             bool "T-Watch S3"
+
+        config LILYGO_T_WATCH_2019
+            bool "T-Watch 2019"
                         
-    
     endchoice
 
     choice LVGL_DEMO

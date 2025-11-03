@@ -76,36 +76,36 @@ def get_user_choice():
 
 def perform_action(choice):
     if choice == 1:
-        os.system("idf.py set-target esp32s3")
         copy_file(
             os.path.join(current_directory, "sdkconfig.defaults.t4-s3"),
             "sdkconfig.defaults",
         )
-    elif choice == 2:
         os.system("idf.py set-target esp32s3")
+    elif choice == 2:
         copy_file(
             os.path.join(current_directory, "sdkconfig.defaults.t-amoled-s3"),
             "sdkconfig.defaults",
         )
-    elif choice == 3:
         os.system("idf.py set-target esp32s3")
+    elif choice == 3:
         copy_file(
             os.path.join(current_directory, "sdkconfig.defaults.t-amoled-lite"),
             "sdkconfig.defaults",
         )
-    elif choice == 4:
         os.system("idf.py set-target esp32s3")
+    elif choice == 4:
         copy_file(
             os.path.join(current_directory, "sdkconfig.defaults.t-qt-s3-fn4r2"),
             "sdkconfig.defaults",
         )
+        os.system("idf.py set-target esp32s3")
         os.system('idf.py add-dependency "espressif/esp_lcd_gc9a01^2.0.0"')
     elif choice == 5:
-        os.system("idf.py set-target esp32s3")
         copy_file(
             os.path.join(current_directory, "sdkconfig.defaults.t-qt-s3-fn8"),
             "sdkconfig.defaults",
         )
+        os.system("idf.py set-target esp32s3")
         os.system('idf.py add-dependency "espressif/esp_lcd_gc9a01^2.0.0"')
     elif choice == 6:
         copy_file(
@@ -114,17 +114,17 @@ def perform_action(choice):
         )
         os.system("idf.py set-target esp32")
     elif choice == 7:
-        os.system("idf.py set-target esp32s3")
         copy_file(
             os.path.join(current_directory, "sdkconfig.defaults.t-display-s3"),
             "sdkconfig.defaults",
         )
-    elif choice == 8:
         os.system("idf.py set-target esp32s3")
+    elif choice == 8:
         copy_file(
             os.path.join(current_directory, "sdkconfig.defaults.t-display-s3pro"),
             "sdkconfig.defaults",
         )
+        os.system("idf.py set-target esp32s3")
         os.system('idf.py add-dependency "espressif/esp_lcd_st7796^1.2.1"')
     elif choice == 9:
         copy_file(
@@ -133,51 +133,51 @@ def perform_action(choice):
         )
         os.system("idf.py set-target esp32s2")
     elif choice == 10:
-        os.system("idf.py set-target esp32s3")
         copy_file(
             os.path.join(current_directory, "sdkconfig.defaults.t-dongle-s3"),
             "sdkconfig.defaults",
         )
-    elif choice == 11:
         os.system("idf.py set-target esp32s3")
+    elif choice == 11:
         copy_file(
             os.path.join(current_directory, "sdkconfig.defaults.t-hmi"),
             "sdkconfig.defaults",
         )
+        os.system("idf.py set-target esp32s3")
         os.system('idf.py add-dependency "atanisoft/esp_lcd_touch_xpt2046^1.0.2"')
     elif choice == 12:
-        os.system("idf.py set-target esp32s3")
         copy_file(
             os.path.join(current_directory, "sdkconfig.defaults.t-display-long"),
             "sdkconfig.defaults",
         )
+        os.system("idf.py set-target esp32s3")
     elif choice == 13:
-        os.system("idf.py set-target esp32c6")
         copy_file(
             os.path.join(current_directory, "sdkconfig.defaults.t-qt-c6"),
             "sdkconfig.defaults",
         )
+        os.system("idf.py set-target esp32c6")
         os.system('idf.py add-dependency "espressif/esp_lcd_gc9a01^2.0.0"')
     elif choice == 14:
-        os.system("idf.py set-target esp32s3")
         copy_file(
             os.path.join(current_directory, "sdkconfig.defaults.t-rgb"),
             "sdkconfig.defaults",
         )
+        os.system("idf.py set-target esp32s3")
 
     elif choice == 15:
-        os.system("idf.py set-target esp32s3")
         copy_file(
             os.path.join(current_directory, "sdkconfig.defaults.t-watch-s3"),
             "sdkconfig.defaults",
         )
+        os.system("idf.py set-target esp32s3")
 
     elif choice == 16:
-        os.system("idf.py set-target esp32")
         copy_file(
             os.path.join(current_directory, "sdkconfig.defaults.t-watch-2019"),
             "sdkconfig.defaults",
         )
+        os.system("idf.py set-target esp32")
 
     os.system('idf.py add-dependency "lvgl/lvgl^8.3.11"')
 
